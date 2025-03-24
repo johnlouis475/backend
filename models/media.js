@@ -1,0 +1,11 @@
+const mongoose = require('mongoose');
+
+const mediaSchema = new mongoose.Schema({
+    path: { type: String, required: true },
+    description: { type: String, default: '' },
+    privacy: { type: String, enum: ['private', 'public'], default: 'private' }
+}, { timestamps: true });
+
+const Media = mongoose.model('Media', mediaSchema);
+
+module.exports = Media;
