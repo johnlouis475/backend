@@ -9,7 +9,9 @@ const multer = require('multer');  // Import multer
 const Media = require('./models/Media'); // Import Media model
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+
+// Heroku assigns the port dynamically, so we use the process.env.PORT variable
+const PORT = process.env.PORT || 5001;  // Default to 5001 if running locally
 
 // Ensure uploads directory exists
 const uploadsDir = path.join(__dirname, 'uploads');
@@ -78,5 +80,7 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Something went wrong!' });
 });
 
-// Start Server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start Server (This will use Heroku's dynamic port)
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
