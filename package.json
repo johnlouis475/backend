@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server1.js",
   "scripts": {
-    "start": "nodemon server1.js"
+    "start": "server1.js"
   },
   "keywords": [],
   "author": "",
