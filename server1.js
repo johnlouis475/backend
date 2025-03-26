@@ -9,6 +9,9 @@ const multer = require('multer');  // Import multer
 const Media = require('./models/Media'); // Import Media model
 
 const app = express();
+app.get("/", function (req, res){
+    res.send("WORKING!!!");
+})
 const PORT = process.env.PORT || 5001;
 
 // Ensure uploads directory exists
